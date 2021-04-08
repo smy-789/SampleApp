@@ -9,7 +9,6 @@
 
 @interface TestView : UIView
 
-
 @end
 
 @implementation TestView
@@ -45,7 +44,32 @@
 
 @implementation ViewController
 
+// 重写初始化
+- (instancetype)init{
+    self = [super init];
+    if(self){
+        
+    }
+    return self;
+}
+
+// UIViewController的生命周期
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+}
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+}
+- (void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+}
+- (void)viewDidDisappear:(BOOL)animated{
+    [super viewDidDisappear:animated];
+}
+
 - (void)viewDidLoad {
+    // 所有的视图初始化逻辑
+    
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
