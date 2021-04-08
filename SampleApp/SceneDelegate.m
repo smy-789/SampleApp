@@ -18,6 +18,47 @@
     // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
     // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
     // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
+    UIWindowScene *windowScene = (UIWindowScene *)scene;
+    
+    self.window = [[UIWindow alloc] initWithWindowScene:windowScene];
+    self.window.frame = windowScene.coordinateSpace.bounds;
+    
+    // MVC  ： C ：tabbarController
+    UITabBarController *tabbarController = [[UITabBarController alloc] init];
+    
+    UIViewController *controller1 = [[UITabBarController alloc] init];
+    controller1.view.backgroundColor = [UIColor redColor];
+    // title被选中后，系统自动高亮
+    controller1.tabBarItem.title = @"新闻";
+    // 添加图片
+    controller1.tabBarItem.image = [UIImage imageNamed:@"icon.bundle/page@2x.png"];
+    // 设置选中后 图片的高亮显示
+    controller1.tabBarItem.selectedImage = [UIImage imageNamed:@"icon.bundle/page_selected@2x.png"];
+    
+    UIViewController *controller2 = [[UITabBarController alloc] init];
+    controller2.view.backgroundColor = [UIColor yellowColor];
+    controller2.tabBarItem.title = @"视频";
+    controller2.tabBarItem.image = [UIImage imageNamed:@"icon.bundle/video@2x.png"];
+    controller2.tabBarItem.selectedImage = [UIImage imageNamed:@"icon.bundle/video_selected@2x.png"];
+    
+    UIViewController *controller3 = [[UITabBarController alloc] init];
+    controller3.view.backgroundColor = [UIColor greenColor];
+    controller3.tabBarItem.title = @"推荐";
+    controller3.tabBarItem.image = [UIImage imageNamed:@"icon.bundle/like@2x.png"];
+    controller3.tabBarItem.selectedImage = [UIImage imageNamed:@"icon.bundle/like_selected@2x.png"];
+
+    UIViewController *controller4 = [[UITabBarController alloc] init];
+    controller4.view.backgroundColor = [UIColor lightGrayColor];
+    controller4.tabBarItem.title = @"我的";
+    controller4.tabBarItem.image = [UIImage imageNamed:@"icon.bundle/home@2x.png"];
+    controller4.tabBarItem.selectedImage = [UIImage imageNamed:@"icon.bundle/home_selected@2x.png"];
+    
+    
+    // 将四个页面加入到 UIViewController 加入到 UITabBarController 之中，顺序即为 TabBar 中的显示顺序
+    [tabbarController setViewControllers:@[controller1, controller2, controller3, controller4]];
+    
+    self.window.rootViewController = tabbarController;
+    [self.window makeKeyAndVisible];
 }
 
 

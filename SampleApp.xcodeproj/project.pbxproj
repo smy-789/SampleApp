@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CD3FEF38261EDD5400696E4E /* icon.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CD3FEF37261EDD5400696E4E /* icon.bundle */; };
 		CDF85AD3261C365400A4B686 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF85AD2261C365400A4B686 /* AppDelegate.m */; };
 		CDF85AD6261C365400A4B686 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF85AD5261C365400A4B686 /* SceneDelegate.m */; };
 		CDF85AD9261C365400A4B686 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF85AD8261C365400A4B686 /* ViewController.m */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CD3FEF37261EDD5400696E4E /* icon.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = icon.bundle; sourceTree = "<group>"; };
 		CDF85ACE261C365400A4B686 /* SampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDF85AD1261C365400A4B686 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		CDF85AD2261C365400A4B686 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -45,6 +47,7 @@
 		CDF85AC5261C365400A4B686 = {
 			isa = PBXGroup;
 			children = (
+				CD3FEF37261EDD5400696E4E /* icon.bundle */,
 				CDF85AD0261C365400A4B686 /* SampleApp */,
 				CDF85ACF261C365400A4B686 /* Products */,
 			);
@@ -132,6 +135,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD3FEF38261EDD5400696E4E /* icon.bundle in Resources */,
 				CDF85AE1261C365400A4B686 /* LaunchScreen.storyboard in Resources */,
 				CDF85ADE261C365400A4B686 /* Assets.xcassets in Resources */,
 				CDF85ADC261C365400A4B686 /* Main.storyboard in Resources */,
