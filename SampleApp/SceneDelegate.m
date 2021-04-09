@@ -6,6 +6,7 @@
 //
 
 #import "SceneDelegate.h"
+#import "ViewController.h"
 
 @interface SceneDelegate ()
 
@@ -26,14 +27,18 @@
     // MVC  ： C ：tabbarController
     UITabBarController *tabbarController = [[UITabBarController alloc] init];
     
-    UIViewController *controller1 = [[UITabBarController alloc] init];
-    controller1.view.backgroundColor = [UIColor redColor];
+    
+    // 将新闻页面作为新闻部分的栈底的最底层显示
+    ViewController *viewController = [[ViewController alloc] init];
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
     // title被选中后，系统自动高亮
-    controller1.tabBarItem.title = @"新闻";
     // 添加图片
-    controller1.tabBarItem.image = [UIImage imageNamed:@"icon.bundle/page@2x.png"];
     // 设置选中后 图片的高亮显示
-    controller1.tabBarItem.selectedImage = [UIImage imageNamed:@"icon.bundle/page_selected@2x.png"];
+//    UIViewController *controller1 = [[UITabBarController alloc] init];
+//    controller1.view.backgroundColor = [UIColor redColor];
+    navigationController.tabBarItem.title = @"新闻";
+    navigationController.tabBarItem.image = [UIImage imageNamed:@"icon.bundle/page@2x.png"];
+    navigationController.tabBarItem.selectedImage = [UIImage imageNamed:@"icon.bundle/page_selected@2x.png"];
     
     UIViewController *controller2 = [[UITabBarController alloc] init];
     controller2.view.backgroundColor = [UIColor yellowColor];
@@ -55,7 +60,7 @@
     
     
     // 将四个页面加入到 UIViewController 加入到 UITabBarController 之中，顺序即为 TabBar 中的显示顺序
-    [tabbarController setViewControllers:@[controller1, controller2, controller3, controller4]];
+    [tabbarController setViewControllers:@[navigationController, controller2, controller3, controller4]];
     
     self.window.rootViewController = tabbarController;
     [self.window makeKeyAndVisible];

@@ -80,12 +80,23 @@
     view.frame = CGRectMake(100, 100, 100, 100);    // x, y, width, heigth
     [self.view addSubview:view];    // 将view粘贴到父view中，即self.view
     
-//    UIView *view2 = [[UIView alloc] init];
-//    view2.frame = CGRectMake(150, 150, 100, 100);
-//    view2.backgroundColor = [UIColor greenColor];
-//    [self.view addSubview:view2];
-    
+    // 创建一个手势操作，点击后执行pushController方法
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pushController)];
+    [view addGestureRecognizer:tapGesture];
 }
 
+- (void)pushController{
+    
+    UIViewController *viewController = [[UIViewController alloc]init];
+    viewController.view.backgroundColor = [UIColor whiteColor];
+    viewController.navigationItem.title = @"内容";
+    [self.navigationController pushViewController:viewController animated:YES];
+    
+    // 为 navigationBar 设置右键标题
+    viewController.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"右键标题" style:UIBarButtonItemStylePlain target:self action:nil];
+    
+    // viewController.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"左键标题" style:UIBarButtonItemStylePlain target:self action:nil];
+}
 
 @end
+
